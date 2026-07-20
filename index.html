@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Какая стратегия управляет вами?</title>
+  <meta name="description" content="Психологический тест на ведущую стратегию адаптации">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <main id="app">
+    <section class="screen is-active" data-screen="home">
+      <div class="page-shell home-grid">
+        <div class="home-copy">
+          <p class="eyebrow">Психологический тест</p>
+          <h1>Какая стратегия <span>управляет вами?</span></h1>
+          <p class="lead">Тест помогает увидеть не набор черт и не диагноз, а привычный способ справляться с тревогой, близостью, ответственностью и неопределенностью.</p>
+          <div class="meta"><span>20 вопросов</span><span>5 стратегий</span><span>5-7 минут</span></div>
+          <button class="button button-dark" data-action="start">Начать тест <span>→</span></button>
+          <p class="note">Результат формирует гипотезу о ведущей стратегии и не заменяет профессиональную диагностику.</p>
+        </div>
+
+        <div class="visual-card">
+          <div class="scene scene-hero" aria-hidden="true">
+            <div class="person person-a"><i class="head"></i><i class="body"></i><i class="arm arm-left"></i><i class="arm arm-right"></i></div>
+            <div class="person person-b"><i class="head"></i><i class="body"></i></div>
+            <div class="base"></div>
+          </div>
+          <div class="visual-caption"><span>Внутренняя система</span><strong>То, что стоит за поведением</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="test" hidden>
+      <header class="topbar">
+        <button class="link-button" data-action="back">← Назад</button>
+        <div class="progress-copy"><span id="progress-text">Вопрос 1 из 20</span><strong id="progress-percent">5%</strong></div>
+        <button class="link-button" data-action="restart">Начать заново</button>
+      </header>
+      <div class="progress-line"><i id="progress-bar"></i></div>
+
+      <div class="question-layout">
+        <div class="question-main">
+          <span class="question-number" id="question-number">01</span>
+          <h2 id="question-text"></h2>
+          <div id="answers" class="answers"></div>
+        </div>
+
+        <aside class="question-art">
+          <div class="rings"><i></i><i></i><i></i></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="screen dark" data-screen="analysis" hidden>
+      <div class="analysis-wrap">
+        <p class="eyebrow light">Анализируем ответы</p>
+        <h2>Собираем вашу <span>внутреннюю карту</span></h2>
+
+        <div class="analysis-steps">
+          <div data-step><b>01</b><span>Сопоставляем ответы</span></div>
+          <div data-step><b>02</b><span>Считаем выраженность стратегий</span></div>
+          <div data-step><b>03</b><span>Определяем ведущий механизм</span></div>
+          <div data-step><b>04</b><span>Формируем интерпретацию</span></div>
+        </div>
+
+        <div class="analysis-progress">
+          <div><span id="analysis-label">Начинаем анализ</span><strong id="analysis-percent">0%</strong></div>
+          <div><i id="analysis-bar"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="result" hidden>
+      <div class="result-shell">
+        <div class="result-copy">
+          <p class="eyebrow">Ваша ведущая стратегия</p>
+          <h2 id="result-title"></h2>
+          <p class="result-lead" id="result-tagline"></p>
+          <div class="result-summary" id="result-summary"></div>
+
+          <div class="result-grid">
+            <article><small>Что вами движет</small><p id="result-driver"></p></article>
+            <article><small>Что повторяется</small><p id="result-repeat"></p></article>
+            <article><small>Сильная сторона</small><p id="result-strength"></p></article>
+            <article><small>Главный риск</small><p id="result-risk"></p></article>
+          </div>
+
+          <div class="result-actions">
+            <button class="button button-dark" data-action="details">Смотреть полный результат <span>→</span></button>
+            <button class="button button-light" data-action="restart">Пройти заново</button>
+          </div>
+        </div>
+
+        <div class="result-visual-card">
+          <div class="result-scene" id="result-scene" aria-hidden="true"></div>
+          <div class="score"><span>Выраженность стратегии</span><strong id="result-score"></strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="details" hidden>
+      <header class="topbar">
+        <button class="link-button" data-action="result">← К результату</button>
+        <button class="link-button" data-action="restart">Пройти заново</button>
+      </header>
+
+      <div class="details-shell">
+        <div class="details-head">
+          <div><p class="eyebrow">Подробная расшифровка</p><h2 id="details-title"></h2></div>
+          <p id="details-intro"></p>
+        </div>
+
+        <div class="tabs">
+          <button class="tab is-active" data-tab="about">Суть</button>
+          <button class="tab" data-tab="triggers">Триггеры</button>
+          <button class="tab" data-tab="price">Цена</button>
+          <button class="tab" data-tab="growth">Развитие</button>
+        </div>
+
+        <div class="details-card" id="details-content"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/questions.js"></script>
+  <script src="assets/js/results.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
