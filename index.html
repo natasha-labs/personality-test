@@ -2,979 +2,185 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  >
-  <meta
-    name="description"
-    content="Психологический тест, который помогает определить ведущую стратегию адаптации"
-  >
-  <meta name="theme-color" content="#151a21">
-  <title>Узнай свою ведущую стратегию</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#15181d">
+  <title>Архитектура личности</title>
+  <meta name="description" content="Тест адаптационных стратегий личности">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <noscript class="noscript">
-    Для прохождения теста необходимо включить JavaScript.
-  </noscript>
-  <main id="app" class="app">
-    <!-- ======================================================
-         ГЛАВНЫЙ ЭКРАН
-    ======================================================= -->
-    <section
-      id="screen-home"
-      class="screen screen-home is-active"
-      data-screen="home"
-      aria-labelledby="home-title"
-    >
+  <noscript><div class="noscript">Для работы теста необходимо включить JavaScript.</div></noscript>
+
+  <main class="app" id="app">
+    <section class="screen is-active" id="screen-home" data-screen="home">
       <header class="site-header">
-        <a
-          class="author"
-          href="#"
-          data-action="go-home"
-          aria-label="Вернуться на главный экран"
-        >
-          <span class="author-mark" aria-hidden="true">NM</span>
-          <span class="author-copy">
-            <span class="author-label">Создано</span>
-            <strong>Наташей Макаровой</strong>
-          </span>
-        </a>
-        <nav class="social-links" aria-label="Социальные сети">
-          <a
-            href="https://www.instagram.com/_natashamakarova_/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>Instagram</span>
-            <strong>@_natashamakarova_</strong>
-          </a>
-          <a
-            href="https://t.me/natashamakara"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>Telegram</span>
-            <strong>@natashamakara</strong>
-          </a>
-        </nav>
-      </header>
-      <div class="screen-body home-layout">
-        <div class="home-content">
-          <div class="section-label">
-            <span class="section-label-line"></span>
-            <span>Психологический тест</span>
-          </div>
-          <h1 id="home-title" class="display-title">
-            Узнай свою
-            <span>ведущую стратегию</span>
-          </h1>
-          <p class="home-description">
-            20 вопросов помогут определить внутренний способ адаптации,
-            который влияет на ваши решения, отношения и повторяющиеся
-            жизненные ситуации.
-          </p>
-          <div class="test-meta" aria-label="Информация о тесте">
-            <div class="meta-item">
-              <span class="meta-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="8"></circle>
-                  <path d="M12 7v5l3 2"></path>
-                </svg>
-              </span>
-              <span>
-                <strong>2 минуты</strong>
-                <small>Среднее время</small>
-              </span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 3l2.2 4.7L19 10l-4.8 2.3L12 17l-2.2-4.7L5 10l4.8-2.3L12 3z"></path>
-                </svg>
-              </span>
-              <span>
-                <strong>Бесплатно</strong>
-                <small>Результат сразу</small>
-              </span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <rect x="5" y="10" width="14" height="10" rx="2"></rect>
-                  <path d="M8 10V7a4 4 0 018 0v3"></path>
-                </svg>
-              </span>
-              <span>
-                <strong>Конфиденциально</strong>
-                <small>Без регистрации</small>
-              </span>
-            </div>
-          </div>
-          <button
-            class="button button-primary button-large"
-            type="button"
-            data-action="to-intro"
-          >
-            <span>Начать тест</span>
-            <span class="button-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M5 12h14"></path>
-                <path d="M14 7l5 5-5 5"></path>
-              </svg>
-            </span>
-          </button>
-          <p class="home-note">
-            Тест не является медицинской диагностикой и не заменяет
-            консультацию специалиста.
-          </p>
+        <div class="brand">
+          <span class="brand-mark">NM</span>
+          <div><small>Наталья Макарова</small><strong>Архитектура личности</strong></div>
         </div>
-        <div class="visual-panel home-visual" aria-hidden="true">
-          <div class="visual-grid"></div>
-          <div class="visual-glow visual-glow-top"></div>
-          <div class="visual-glow visual-glow-bottom"></div>
-          <div class="visual-number">01</div>
-          <div class="image-frame image-frame-home">
-            <img
-              src="assets/images/hero.webp"
-              alt=""
-              width="900"
-              height="1100"
-              loading="eager"
-              decoding="async"
-            >
+        <div class="header-links"><a href="https://instagram.com/_natashamakarova_" target="_blank" rel="noreferrer">Instagram</a><a href="https://t.me/natashamakara" target="_blank" rel="noreferrer">Telegram</a></div>
+      </header>
+
+      <div class="screen-body hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">Психологический тест</p>
+          <h1>Какая стратегия <span>управляет вами?</span></h1>
+          <p class="lead">Тест помогает увидеть не набор черт и не диагноз, а привычный способ справляться с тревогой, близостью, ответственностью и неопределенностью.</p>
+          <div class="hero-meta">
+            <span>20 вопросов</span><span>5 стратегий</span><span>5-7 минут</span>
           </div>
-          <div class="visual-caption">
-            <span>Архитектура личности</span>
-            <strong>Стратегии адаптации</strong>
-          </div>
+          <button class="button button-primary" data-action="to-intro">Начать тест <span>→</span></button>
+          <p class="microcopy">Результат формирует гипотезу о ведущей стратегии и не заменяет профессиональную диагностику.</p>
+        </div>
+        <div class="visual-card">
+          <img src="assets/images/hero.svg" alt="Абстрактная скульптура">
+          <div class="visual-caption"><span>Внутренняя система</span><strong>То, что стоит за поведением</strong></div>
         </div>
       </div>
     </section>
-    <!-- ======================================================
-         ЭКРАН ПЕРЕД НАЧАЛОМ
-    ======================================================= -->
-    <section
-      id="screen-intro"
-      class="screen screen-intro"
-      data-screen="intro"
-      aria-labelledby="intro-title"
-      hidden
-    >
+
+    <section class="screen" id="screen-intro" data-screen="intro" hidden>
       <header class="site-header">
-        <button
-          class="author author-button"
-          type="button"
-          data-action="go-home"
-          aria-label="Вернуться на главный экран"
-        >
-          <span class="author-mark" aria-hidden="true">NM</span>
-          <span class="author-copy">
-            <span class="author-label">Создано</span>
-            <strong>Наташей Макаровой</strong>
-          </span>
-        </button>
-        <button
-          class="header-back"
-          type="button"
-          data-action="go-home"
-        >
-          <span aria-hidden="true">←</span>
-          <span>Назад</span>
-        </button>
+        <button class="text-button" data-action="go-home">← Назад</button>
+        <div class="brand compact"><span class="brand-mark">NM</span><strong>Архитектура личности</strong></div>
       </header>
       <div class="screen-body intro-layout">
-        <div class="visual-panel intro-visual" aria-hidden="true">
-          <div class="visual-grid"></div>
-          <div class="visual-glow visual-glow-center"></div>
-          <div class="visual-number">02</div>
-          <div class="image-frame image-frame-intro">
-            <img
-              src="assets/images/intro.webp"
-              alt=""
-              width="900"
-              height="1100"
-              loading="lazy"
-              decoding="async"
-            >
+        <div class="visual-card intro-visual"><img src="assets/images/intro.svg" alt="Скульптурная композиция"></div>
+        <div class="intro-copy">
+          <p class="eyebrow">Перед началом</p>
+          <h2>Отвечайте не так, <span>как правильно</span></h2>
+          <div class="rules">
+            <article><b>01</b><div><h3>Выбирайте первый отклик</h3><p>Не анализируйте каждый вопрос слишком долго.</p></div></article>
+            <article><b>02</b><div><h3>Оценивайте типичное состояние</h3><p>Ориентируйтесь на то, как вы реагируете чаще всего.</p></div></article>
+            <article><b>03</b><div><h3>Не пытайтесь получить хороший результат</h3><p>У каждой стратегии есть защитная функция, ресурс и цена.</p></div></article>
           </div>
-          <div class="visual-caption">
-            <span>Внутренняя система</span>
-            <strong>Способ управления собой</strong>
-          </div>
-        </div>
-        <div class="intro-content">
-          <div class="section-label">
-            <span class="section-label-line"></span>
-            <span>Перед началом</span>
-          </div>
-          <h2 id="intro-title" class="section-title">
-            Отвечайте не так, как правильно.
-            <span>Отвечайте так, как происходит у вас.</span>
-          </h2>
-          <p class="intro-description">
-            В тесте нет хороших и плохих результатов. Каждый ответ помогает
-            увидеть способ, с помощью которого ваша внутренняя система
-            пытается сохранять безопасность, близость и контроль.
-          </p>
-          <div class="intro-rules">
-            <article class="intro-rule">
-              <span class="rule-number">01</span>
-              <div>
-                <h3>Выбирайте первый отклик</h3>
-                <p>
-                  Не анализируйте вопрос слишком долго. Обычно первая реакция
-                  точнее всего отражает привычную внутреннюю стратегию.
-                </p>
-              </div>
-            </article>
-            <article class="intro-rule">
-              <span class="rule-number">02</span>
-              <div>
-                <h3>Ориентируйтесь на повторяющийся опыт</h3>
-                <p>
-                  Отвечайте не по одной отдельной ситуации, а по тому, как
-                  обычно происходит в отношениях, работе и важных решениях.
-                </p>
-              </div>
-            </article>
-            <article class="intro-rule">
-              <span class="rule-number">03</span>
-              <div>
-                <h3>Не пытайтесь получить определенный результат</h3>
-                <p>
-                  Тест строит гипотезу о ведущей стратегии, а не оценивает
-                  вашу личность и не ставит диагноз.
-                </p>
-              </div>
-            </article>
-          </div>
-          <div class="method-card">
-            <div class="method-card-heading">
-              <span class="method-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="9"></circle>
-                  <path d="M12 8v4"></path>
-                  <circle cx="12" cy="16" r=".8"></circle>
-                </svg>
-              </span>
-              <strong>На чем основан тест</strong>
-            </div>
-            <p>
-              Вопросы опираются на современные представления о схемах,
-              привязанности, защитных механизмах и внутренних частях личности.
-            </p>
-            <div class="method-tags">
-              <span>Schema Therapy</span>
-              <span>Attachment Theory</span>
-              <span>Transactional Analysis</span>
-              <span>Internal Family Systems</span>
-            </div>
-          </div>
-          <button
-            class="button button-primary button-large"
-            type="button"
-            data-action="start-test"
-          >
-            <span>Продолжить</span>
-            <span class="button-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M5 12h14"></path>
-                <path d="M14 7l5 5-5 5"></path>
-              </svg>
-            </span>
-          </button>
+          <button class="button button-primary" data-action="start-test">Перейти к вопросам <span>→</span></button>
         </div>
       </div>
     </section>
-    <!-- ======================================================
-         ЭКРАН ТЕСТА
-    ======================================================= -->
-    <section
-      id="screen-test"
-      class="screen screen-test"
-      data-screen="test"
-      aria-labelledby="question-text"
-      hidden
-    >
+
+    <section class="screen" id="screen-test" data-screen="test" hidden>
       <header class="test-header">
-        <button
-          id="question-back"
-          class="icon-button"
-          type="button"
-          data-action="prev-question"
-          aria-label="Вернуться к предыдущему вопросу"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M19 12H5"></path>
-            <path d="M10 7l-5 5 5 5"></path>
-          </svg>
-        </button>
-        <div class="test-progress-info">
-          <span id="question-counter">Вопрос 1 из 20</span>
-          <strong id="question-percent">5%</strong>
-        </div>
-        <button
-          class="icon-button"
-          type="button"
-          data-action="restart-test"
-          aria-label="Начать тест заново"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20 11a8 8 0 10-2.3 5.7"></path>
-            <path d="M20 5v6h-6"></path>
-          </svg>
-        </button>
+        <button class="icon-button" id="question-back" data-action="prev-question" aria-label="Предыдущий вопрос">←</button>
+        <div class="progress-copy"><span id="question-counter">Вопрос 1 из 20</span><strong id="question-percent">5%</strong></div>
+        <button class="text-button" data-action="restart-test">Начать заново</button>
       </header>
-      <div
-        class="progress-track"
-        role="progressbar"
-        aria-label="Прогресс прохождения теста"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        aria-valuenow="5"
-      >
-        <div id="progress-bar" class="progress-bar"></div>
-      </div>
-      <div class="test-body">
-        <div class="question-panel">
-          <div class="question-label">
-            <span>Выберите один вариант</span>
+      <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="5"><div class="progress-bar" id="progress-bar"></div></div>
+      <div class="test-layout">
+        <div class="question-zone">
+          <div class="question-card" id="question-card">
+            <span class="question-index" id="question-index">01</span>
+            <p class="question-text" id="question-text"></p>
           </div>
-          <div
-            id="question-card"
-            class="question-card"
-            aria-live="polite"
-          >
-            <span
-              id="question-index"
-              class="question-index"
-              aria-hidden="true"
-            >
-              01
-            </span>
-            <h2 id="question-text" class="question-text"></h2>
-          </div>
-          <div
-            id="answers"
-            class="answers"
-            role="radiogroup"
-            aria-label="Варианты ответа"
-          ></div>
-          <div class="question-footer">
-            <p class="question-hint">
-              Выберите ответ, который точнее описывает ваш обычный внутренний
-              отклик.
-            </p>
-            <span class="keyboard-hint" aria-hidden="true">
-              Клавиши 1-4
-            </span>
-          </div>
+          <div class="answers" id="answers" role="radiogroup"></div>
+          <p class="question-hint">Можно использовать клавиши 1-4.</p>
         </div>
-        <aside class="test-aside" aria-hidden="true">
-          <div class="test-aside-grid"></div>
-          <div class="test-aside-copy">
-            <span>Внутренняя система</span>
-            <strong>Отвечайте честно, а не правильно</strong>
-          </div>
-          <div class="test-aside-shape shape-one"></div>
-          <div class="test-aside-shape shape-two"></div>
-          <div class="test-aside-shape shape-three"></div>
-          <div class="test-aside-number" id="aside-question-number">
-            01
-          </div>
+        <aside class="test-art">
+          <div class="test-art-copy"><small>Вопрос</small><strong id="aside-question-number">01</strong></div>
+          <div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-c"></div>
         </aside>
       </div>
     </section>
-    <!-- ======================================================
-         ЭКРАН АНАЛИЗА
-    ======================================================= -->
-    <section
-      id="screen-analysis"
-      class="screen screen-analysis screen-dark"
-      data-screen="analysis"
-      aria-labelledby="analysis-title"
-      hidden
-    >
-      <header class="site-header site-header-dark">
-        <div class="author">
-          <span class="author-mark" aria-hidden="true">NM</span>
-          <span class="author-copy">
-            <span class="author-label">Создано</span>
-            <strong>Наташей Макаровой</strong>
-          </span>
-        </div>
-        <div class="analysis-status">
-          <span class="status-dot"></span>
-          <span>Анализ ответов</span>
-        </div>
+
+    <section class="screen screen-dark" id="screen-analysis" data-screen="analysis" hidden>
+      <header class="site-header dark-header">
+        <div class="brand compact light"><span class="brand-mark">NM</span><strong>Архитектура личности</strong></div>
+        <div class="status"><span></span>Анализ ответов</div>
       </header>
       <div class="screen-body analysis-layout">
-        <div class="analysis-content">
-          <div class="section-label section-label-light">
-            <span class="section-label-line"></span>
-            <span>Обработка результата</span>
+        <div>
+          <p class="eyebrow light">Обработка результата</p>
+          <h2>Собираем вашу <span>внутреннюю карту</span></h2>
+          <p class="lead muted-light">Сопоставляем ответы, считаем выраженность стратегий и определяем ведущий механизм адаптации.</p>
+          <div class="analysis-steps">
+            <div data-analysis-step><i>01</i><div><strong>Сопоставление ответов</strong><small>Проверяем общий рисунок реакций</small></div></div>
+            <div data-analysis-step><i>02</i><div><strong>Подсчет стратегий</strong><small>Сравниваем выраженность пяти механизмов</small></div></div>
+            <div data-analysis-step><i>03</i><div><strong>Определение ведущей стратегии</strong><small>Находим наиболее вероятный способ адаптации</small></div></div>
+            <div data-analysis-step><i>04</i><div><strong>Формирование интерпретации</strong><small>Собираем понятное описание результата</small></div></div>
           </div>
-          <h2 id="analysis-title" class="section-title section-title-light">
-            Анализируем вашу
-            <span>внутреннюю стратегию</span>
-          </h2>
-          <p class="analysis-description">
-            Мы сопоставляем ответы, определяем ведущий механизм адаптации
-            и формируем индивидуальное описание результата.
-          </p>
-          <div
-            id="analysis-steps"
-            class="analysis-steps"
-            aria-live="polite"
-          >
-            <div class="analysis-step" data-analysis-step="0">
-              <span class="analysis-step-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 12l4 4L19 6"></path>
-                </svg>
-              </span>
-              <div>
-                <strong>Определяем ведущую стратегию</strong>
-                <span>Сравниваем распределение ответов</span>
-              </div>
-            </div>
-            <div class="analysis-step" data-analysis-step="1">
-              <span class="analysis-step-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 12l4 4L19 6"></path>
-                </svg>
-              </span>
-              <div>
-                <strong>Анализируем защитные механизмы</strong>
-                <span>Ищем способ сохранения безопасности</span>
-              </div>
-            </div>
-            <div class="analysis-step" data-analysis-step="2">
-              <span class="analysis-step-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 12l4 4L19 6"></path>
-                </svg>
-              </span>
-              <div>
-                <strong>Находим повторяющиеся модели</strong>
-                <span>Связываем ответы с привычными сценариями</span>
-              </div>
-            </div>
-            <div class="analysis-step" data-analysis-step="3">
-              <span class="analysis-step-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 12l4 4L19 6"></path>
-                </svg>
-              </span>
-              <div>
-                <strong>Формируем психологический профиль</strong>
-                <span>Собираем итоговое описание результата</span>
-              </div>
-            </div>
-          </div>
-          <div class="analysis-progress-card">
-            <div class="analysis-progress-heading">
-              <span>Формирование результата</span>
-              <strong id="analysis-percent">0%</strong>
-            </div>
-            <div class="analysis-progress-track">
-              <div
-                id="analysis-progress-bar"
-                class="analysis-progress-bar"
-              ></div>
-            </div>
-            <p id="analysis-message">
-              Это займет несколько секунд
-            </p>
-          </div>
+          <div class="analysis-progress"><div><span id="analysis-message">Это займет несколько секунд</span><strong id="analysis-percent">0%</strong></div><div><i id="analysis-progress-bar"></i></div></div>
         </div>
-        <div class="visual-panel analysis-visual" aria-hidden="true">
-          <div class="visual-grid visual-grid-dark"></div>
-          <div class="analysis-orbit analysis-orbit-one"></div>
-          <div class="analysis-orbit analysis-orbit-two"></div>
-          <div class="analysis-orbit analysis-orbit-three"></div>
-          <div class="image-frame image-frame-analysis">
-            <img
-              src="assets/images/analysis.webp"
-              alt=""
-              width="900"
-              height="1100"
-              loading="lazy"
-              decoding="async"
-            >
-          </div>
-          <div class="visual-caption visual-caption-dark">
-            <span>Анализ структуры</span>
-            <strong>Поиск ведущего механизма</strong>
-          </div>
-        </div>
+        <div class="visual-card dark-card"><img src="assets/images/analysis.svg" alt="Анализ структуры"></div>
       </div>
     </section>
-    <!-- ======================================================
-         КРАТКИЙ РЕЗУЛЬТАТ
-    ======================================================= -->
-    <section
-      id="screen-result"
-      class="screen screen-result"
-      data-screen="result"
-      aria-labelledby="result-title"
-      hidden
-    >
+
+    <section class="screen" id="screen-result" data-screen="result" hidden>
       <header class="site-header">
-        <button
-          class="author author-button"
-          type="button"
-          data-action="go-home"
-          aria-label="Вернуться на главный экран"
-        >
-          <span class="author-mark" aria-hidden="true">NM</span>
-          <span class="author-copy">
-            <span class="author-label">Создано</span>
-            <strong>Наташей Макаровой</strong>
-          </span>
-        </button>
-        <button
-          class="header-restart"
-          type="button"
-          data-action="restart-test"
-        >
-          Пройти заново
-        </button>
+        <div class="brand compact"><span class="brand-mark">NM</span><strong>Ваш результат</strong></div>
+        <button class="text-button" data-action="restart-test">Пройти заново</button>
       </header>
       <div class="screen-body result-layout">
-        <div class="result-content">
-          <div class="section-label">
-            <span class="section-label-line"></span>
-            <span>Ваша ведущая стратегия</span>
+        <div class="result-copy">
+          <p class="eyebrow">Ведущая стратегия</p>
+          <h2 id="result-title">Спасатель</h2>
+          <p class="result-tagline" id="result-tagline"></p>
+          <div class="summary-box"><small>Ключевая логика</small><p id="result-summary"></p></div>
+          <div class="result-grid">
+            <article><small>Внутренний двигатель</small><p id="result-driver"></p></article>
+            <article><small>Повторяющийся цикл</small><p id="result-repeat"></p></article>
+            <article><small>Ресурс стратегии</small><p id="result-strength"></p></article>
+            <article><small>Цена стратегии</small><p id="result-risk"></p></article>
           </div>
-          <h1 id="result-title" class="result-title"></h1>
-          <p id="result-tagline" class="result-tagline"></p>
-          <div class="result-summary">
-            <span class="result-summary-label">Ключевой механизм</span>
-            <p id="result-summary"></p>
-          </div>
-          <div class="result-cards">
-            <article class="result-card">
-              <span class="result-card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"></path>
-                </svg>
-              </span>
-              <div>
-                <h3>Что вами движет</h3>
-                <p id="result-driver"></p>
-              </div>
-            </article>
-            <article class="result-card">
-              <span class="result-card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M20 11a8 8 0 10-2.3 5.7"></path>
-                  <path d="M20 5v6h-6"></path>
-                </svg>
-              </span>
-              <div>
-                <h3>Что повторяется</h3>
-                <p id="result-repeat"></p>
-              </div>
-            </article>
-            <article class="result-card">
-              <span class="result-card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 3l2.2 4.7L19 10l-4.8 2.3L12 17l-2.2-4.7L5 10l4.8-2.3L12 3z"></path>
-                </svg>
-              </span>
-              <div>
-                <h3>Сильная сторона</h3>
-                <p id="result-strength"></p>
-              </div>
-            </article>
-            <article class="result-card">
-              <span class="result-card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 3l9 16H3L12 3z"></path>
-                  <path d="M12 9v4"></path>
-                  <circle cx="12" cy="16" r=".7"></circle>
-                </svg>
-              </span>
-              <div>
-                <h3>Главный риск</h3>
-                <p id="result-risk"></p>
-              </div>
-            </article>
-          </div>
-          <button
-            class="button button-primary button-large"
-            type="button"
-            data-action="open-details"
-          >
-            <span>Смотреть полный результат</span>
-            <span class="button-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M5 12h14"></path>
-                <path d="M14 7l5 5-5 5"></path>
-              </svg>
-            </span>
-          </button>
+          <button class="button button-primary" data-action="open-details">Подробная расшифровка <span>→</span></button>
         </div>
-        <div class="visual-panel result-visual">
-          <div class="visual-grid"></div>
-          <div class="visual-glow visual-glow-center"></div>
-          <div class="result-visual-label">
-            <span>Ведущая стратегия</span>
-            <strong id="result-visual-title"></strong>
-          </div>
-          <div class="image-frame image-frame-result">
-            <img
-              id="result-image"
-              src="assets/images/rescuer.webp"
-              alt=""
-              width="900"
-              height="1100"
-              loading="lazy"
-              decoding="async"
-            >
-          </div>
-          <div class="result-score-panel">
-            <div>
-              <span>Выраженность</span>
-              <strong id="result-score-percent">0%</strong>
-            </div>
-            <div class="result-score-track">
-              <div
-                id="result-score-bar"
-                class="result-score-bar"
-              ></div>
-            </div>
-          </div>
+        <div class="visual-card result-visual">
+          <div class="visual-title"><small>Ваш тип</small><strong id="result-visual-title"></strong></div>
+          <img id="result-image" src="assets/images/rescuer.svg" alt="">
+          <div class="score-panel"><div><span>Выраженность</span><strong id="result-score-percent">0%</strong></div><div><i id="result-score-bar"></i></div></div>
         </div>
       </div>
     </section>
-    <!-- ======================================================
-         ПОЛНЫЙ РЕЗУЛЬТАТ
-    ======================================================= -->
-    <section
-      id="screen-details"
-      class="screen screen-details"
-      data-screen="details"
-      aria-labelledby="details-title"
-      hidden
-    >
+
+    <section class="screen" id="screen-details" data-screen="details" hidden>
       <header class="site-header">
-        <button
-          class="author author-button"
-          type="button"
-          data-action="go-home"
-          aria-label="Вернуться на главный экран"
-        >
-          <span class="author-mark" aria-hidden="true">NM</span>
-          <span class="author-copy">
-            <span class="author-label">Создано</span>
-            <strong>Наташей Макаровой</strong>
-          </span>
-        </button>
-        <button
-          class="header-back"
-          type="button"
-          data-action="back-to-result"
-        >
-          <span aria-hidden="true">←</span>
-          <span>К результату</span>
-        </button>
+        <button class="text-button" data-action="back-to-result">← К результату</button>
+        <button class="text-button" data-action="restart-test">Пройти заново</button>
       </header>
-      <div class="details-header">
-        <div>
-          <div class="section-label">
-            <span class="section-label-line"></span>
-            <span>Полный психологический профиль</span>
-          </div>
-          <h1 id="details-title" class="details-title"></h1>
-        </div>
-        <p id="details-intro" class="details-intro"></p>
-      </div>
-      <div
-        class="details-tabs"
-        role="tablist"
-        aria-label="Разделы результата"
-      >
-        <button
-          id="tab-about"
-          class="details-tab is-active"
-          type="button"
-          role="tab"
-          aria-selected="true"
-          aria-controls="details-panel"
-          data-tab="about"
-        >
-          <span>01</span>
-          О стратегии
-        </button>
-        <button
-          id="tab-manifestations"
-          class="details-tab"
-          type="button"
-          role="tab"
-          aria-selected="false"
-          aria-controls="details-panel"
-          data-tab="manifestations"
-        >
-          <span>02</span>
-          Проявления
-        </button>
-        <button
-          id="tab-relationships"
-          class="details-tab"
-          type="button"
-          role="tab"
-          aria-selected="false"
-          aria-controls="details-panel"
-          data-tab="relationships"
-        >
-          <span>03</span>
-          Отношения
-        </button>
-        <button
-          id="tab-growth"
-          class="details-tab"
-          type="button"
-          role="tab"
-          aria-selected="false"
-          aria-controls="details-panel"
-          data-tab="growth"
-        >
-          <span>04</span>
-          Развитие
-        </button>
+      <div class="details-heading"><div><p class="eyebrow">Подробная интерпретация</p><h2 id="details-title"></h2></div><p id="details-intro"></p></div>
+      <div class="details-tabs" role="tablist">
+        <button class="details-tab is-active" id="tab-about" data-tab="about" role="tab" aria-selected="true"><span>01</span>Суть</button>
+        <button class="details-tab" id="tab-triggers" data-tab="triggers" role="tab" aria-selected="false"><span>02</span>Триггеры</button>
+        <button class="details-tab" id="tab-price" data-tab="price" role="tab" aria-selected="false"><span>03</span>Цена</button>
+        <button class="details-tab" id="tab-growth" data-tab="growth" role="tab" aria-selected="false"><span>04</span>Развитие</button>
       </div>
       <div class="details-layout">
-        <article
-          id="details-panel"
-          class="details-panel"
-          role="tabpanel"
-          tabindex="0"
-          aria-labelledby="tab-about"
-        >
-          <div id="details-content" class="details-content"></div>
-        </article>
-        <aside class="details-aside">
-          <div class="details-aside-image" aria-hidden="true">
-            <img
-              id="details-image"
-              src="assets/images/rescuer.webp"
-              alt=""
-              width="700"
-              height="900"
-              loading="lazy"
-              decoding="async"
-            >
-          </div>
-          <div class="details-aside-card">
-            <span>Важно</span>
-            <p>
-              Стратегия - не ваша личность. Это способ адаптации, который
-              когда-то помогал справляться с важными чувствами и ситуациями.
-            </p>
-          </div>
-        </aside>
+        <article class="details-panel" id="details-panel"><div id="details-content"></div></article>
+        <aside class="details-aside"><div class="details-image"><img id="details-image" src="" alt=""></div><div class="details-note"><small>Важно</small><p>Стратегия не является вашей личностью. Это автоматический способ справляться с внутренним напряжением.</p></div></aside>
       </div>
-      <div class="details-footer">
-        <button
-          class="button button-secondary"
-          type="button"
-          data-action="restart-test"
-        >
-          Пройти тест заново
-        </button>
-        <button
-          class="button button-primary"
-          type="button"
-          data-action="to-cta"
-        >
-          <span>Следующий шаг</span>
-          <span class="button-arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M5 12h14"></path>
-              <path d="M14 7l5 5-5 5"></path>
-            </svg>
-          </span>
-        </button>
-      </div>
+      <div class="details-footer"><button class="button button-secondary" data-action="back-to-result">Назад</button><button class="button button-primary" data-action="to-cta">Что делать дальше <span>→</span></button></div>
     </section>
-    <!-- ======================================================
-         CTA
-    ======================================================= -->
-    <section
-      id="screen-cta"
-      class="screen screen-cta screen-dark"
-      data-screen="cta"
-      aria-labelledby="cta-title"
-      hidden
-    >
-      <header class="site-header site-header-dark">
-        <button
-          class="author author-button"
-          type="button"
-          data-action="go-home"
-          aria-label="Вернуться на главный экран"
-        >
-          <span class="author-mark" aria-hidden="true">NM</span>
-          <span class="author-copy">
-            <span class="author-label">Создано</span>
-            <strong>Наташей Макаровой</strong>
-          </span>
-        </button>
-        <button
-          class="header-back header-back-dark"
-          type="button"
-          data-action="back-to-details"
-        >
-          <span aria-hidden="true">←</span>
-          <span>Назад</span>
-        </button>
+
+    <section class="screen screen-dark" id="screen-cta" data-screen="cta" hidden>
+      <header class="site-header dark-header">
+        <button class="text-button light-button" data-action="back-to-details">← К расшифровке</button>
+        <div class="brand compact light"><span class="brand-mark">NM</span><strong>Наталья Макарова</strong></div>
       </header>
       <div class="screen-body cta-layout">
-        <div class="visual-panel cta-visual" aria-hidden="true">
-          <div class="visual-grid visual-grid-dark"></div>
-          <div class="visual-glow visual-glow-center"></div>
-          <div class="visual-number">05</div>
-          <div class="image-frame image-frame-cta">
-            <img
-              src="assets/images/cta.webp"
-              alt=""
-              width="900"
-              height="1100"
-              loading="lazy"
-              decoding="async"
-            >
-          </div>
-          <div class="visual-caption visual-caption-dark">
-            <span>Следующий уровень</span>
-            <strong>Понять собственную историю</strong>
-          </div>
-        </div>
-        <div class="cta-content">
-          <div class="section-label section-label-light">
-            <span class="section-label-line"></span>
-            <span>Следующий шаг</span>
-          </div>
-          <h2 id="cta-title" class="cta-title">
-            Тест показывает стратегию.
-            <span>Личная работа помогает понять ее происхождение.</span>
-          </h2>
-          <p class="cta-description">
-            Одинаковая стратегия у разных людей может формироваться по разным
-            причинам. На встрече мы исследуем вашу историю, внутренние
-            конфликты и ситуации, в которых привычная стратегия начинает
-            управлять решениями вместо вас.
-          </p>
-          <div class="cta-question">
-            <span>Главный вопрос</span>
-            <p>
-              Почему именно у вас эта стратегия сформировалась так и почему
-              продолжает влиять на вашу жизнь сегодня?
-            </p>
-          </div>
-          <blockquote class="cta-quote">
-            Иногда одной встречи достаточно, чтобы увидеть механизм,
-            который годами оставался незаметным.
-          </blockquote>
-          <div class="cta-actions">
-            <a
-              class="button button-primary button-large"
-              href="https://t.me/natashamakara"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>Записаться на встречу</span>
-              <span class="button-arrow" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M5 12h14"></path>
-                  <path d="M14 7l5 5-5 5"></path>
-                </svg>
-              </span>
-            </a>
-            <button
-              class="button button-ghost-dark"
-              type="button"
-              data-action="restart-test"
-            >
-              Пройти тест заново
-            </button>
-          </div>
-          <p class="cta-disclaimer">
-            Консультация не является медицинской услугой и не заменяет
-            диагностику или лечение у врача.
-          </p>
+        <div class="visual-card dark-card"><img src="assets/images/cta.svg" alt="Скульптурная композиция"></div>
+        <div class="cta-copy">
+          <p class="eyebrow light">Следующий шаг</p>
+          <h2>Понять стратегию - <span>не значит автоматически выйти из нее</span></h2>
+          <p class="lead muted-light">На консультации мы разбираем, какое чувство запускает стратегию, чего она пытается добиться и как постепенно вернуть выбор взрослой части личности.</p>
+          <div class="cta-question"><small>Вопрос для себя</small><p>Что изменится в моей жизни, если эта стратегия перестанет принимать решения вместо меня?</p></div>
+          <a class="button button-light" href="https://t.me/natashamakara" target="_blank" rel="noreferrer">Записаться на консультацию <span>→</span></a>
         </div>
       </div>
     </section>
-    <!-- ======================================================
-         МОДАЛЬНОЕ ОКНО ПЕРЕЗАПУСКА
-    ======================================================= -->
-    <div
-      id="restart-modal"
-      class="modal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="restart-modal-title"
-      hidden
-    >
-      <button
-        class="modal-backdrop"
-        type="button"
-        data-action="close-restart-modal"
-        aria-label="Закрыть окно"
-      ></button>
-      <div class="modal-card">
-        <button
-          class="modal-close"
-          type="button"
-          data-action="close-restart-modal"
-          aria-label="Закрыть"
-        >
-          ×
-        </button>
-        <span class="modal-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24">
-            <path d="M20 11a8 8 0 10-2.3 5.7"></path>
-            <path d="M20 5v6h-6"></path>
-          </svg>
-        </span>
-        <h2 id="restart-modal-title">
-          Начать тест заново?
-        </h2>
-        <p>
-          Текущие ответы и результат будут удалены.
-        </p>
-        <div class="modal-actions">
-          <button
-            class="button button-secondary"
-            type="button"
-            data-action="close-restart-modal"
-          >
-            Отмена
-          </button>
-          <button
-            class="button button-primary"
-            type="button"
-            data-action="confirm-restart"
-          >
-            Начать заново
-          </button>
-        </div>
-      </div>
-    </div>
   </main>
-  <!-- ========================================================
-       ДАННЫЕ И ЛОГИКА
-  ========================================================= -->
+
+  <div class="modal" id="restart-modal" hidden>
+    <button class="modal-backdrop" data-action="close-restart-modal" aria-label="Закрыть"></button>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="restart-title">
+      <button class="modal-close" data-action="close-restart-modal" aria-label="Закрыть">×</button>
+      <h2 id="restart-title">Начать тест заново?</h2>
+      <p>Текущие ответы будут удалены.</p>
+      <div><button class="button button-secondary" data-action="close-restart-modal">Отмена</button><button class="button button-primary" data-action="confirm-restart">Начать заново</button></div>
+    </div>
+  </div>
+
   <script src="assets/js/questions.js"></script>
   <script src="assets/js/strategies.js"></script>
   <script src="assets/js/results.js"></script>
