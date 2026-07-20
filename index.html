@@ -2,187 +2,113 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#15181d">
-  <title>Архитектура личности</title>
-  <meta name="description" content="Тест адаптационных стратегий личности">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Какая стратегия управляет вами?</title>
+  <meta name="description" content="Психологический тест на ведущую стратегию адаптации">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <noscript><div class="noscript">Для работы теста необходимо включить JavaScript.</div></noscript>
-
-  <main class="app" id="app">
-    <section class="screen is-active" id="screen-home" data-screen="home">
-      <header class="site-header">
-        <div class="brand">
-          <span class="brand-mark">NM</span>
-          <div><small>Наталья Макарова</small><strong>Архитектура личности</strong></div>
-        </div>
-        <div class="header-links"><a href="https://instagram.com/_natashamakarova_" target="_blank" rel="noreferrer">Instagram</a><a href="https://t.me/natashamakara" target="_blank" rel="noreferrer">Telegram</a></div>
-      </header>
-
-      <div class="screen-body hero-layout">
-        <div class="hero-copy">
+  <main id="app">
+    <section class="screen is-active" data-screen="home">
+      <div class="page-shell home-grid">
+        <div class="home-copy">
           <p class="eyebrow">Психологический тест</p>
           <h1>Какая стратегия <span>управляет вами?</span></h1>
           <p class="lead">Тест помогает увидеть не набор черт и не диагноз, а привычный способ справляться с тревогой, близостью, ответственностью и неопределенностью.</p>
-          <div class="hero-meta">
-            <span>20 вопросов</span><span>5 стратегий</span><span>5-7 минут</span>
-          </div>
-          <button class="button button-primary" data-action="to-intro">Начать тест <span>→</span></button>
-          <p class="microcopy">Результат формирует гипотезу о ведущей стратегии и не заменяет профессиональную диагностику.</p>
+          <div class="meta"><span>20 вопросов</span><span>5 стратегий</span><span>5-7 минут</span></div>
+          <button class="button button-dark" data-action="start">Начать тест <span>→</span></button>
+          <p class="note">Результат формирует гипотезу о ведущей стратегии и не заменяет профессиональную диагностику.</p>
         </div>
-        <div class="visual-card">
-          <img src="assets/images/hero.png" alt="Абстрактная скульптура">
-          <div class="visual-caption"><span>Внутренняя система</span><strong>То, что стоит за поведением</strong></div>
+        <div class="hero-card">
+          <img src="assets/images/hero.webp" alt="Серебристые фигуры">
+          <div class="hero-caption"><span>Внутренняя система</span><strong>То, что стоит за поведением</strong></div>
         </div>
       </div>
     </section>
 
-    <section class="screen" id="screen-intro" data-screen="intro" hidden>
-      <header class="site-header">
-        <button class="text-button" data-action="go-home">← Назад</button>
-        <div class="brand compact"><span class="brand-mark">NM</span><strong>Архитектура личности</strong></div>
+    <section class="screen" data-screen="test" hidden>
+      <header class="topbar">
+        <button class="link-button" data-action="back">← Назад</button>
+        <div class="progress-copy"><span id="progress-text">Вопрос 1 из 20</span><strong id="progress-percent">5%</strong></div>
+        <button class="link-button" data-action="restart">Начать заново</button>
       </header>
-      <div class="screen-body intro-layout">
-        <div class="visual-card intro-visual"><img src="assets/images/intro.png" alt="Скульптурная композиция"></div>
-        <div class="intro-copy">
-          <p class="eyebrow">Перед началом</p>
-          <h2>Отвечайте не так, <span>как правильно</span></h2>
-          <div class="rules">
-            <article><b>01</b><div><h3>Выбирайте первый отклик</h3><p>Не анализируйте каждый вопрос слишком долго.</p></div></article>
-            <article><b>02</b><div><h3>Оценивайте типичное состояние</h3><p>Ориентируйтесь на то, как вы реагируете чаще всего.</p></div></article>
-            <article><b>03</b><div><h3>Не пытайтесь получить хороший результат</h3><p>У каждой стратегии есть защитная функция, ресурс и цена.</p></div></article>
-          </div>
-          <button class="button button-primary" data-action="start-test">Перейти к вопросам <span>→</span></button>
+      <div class="progress-line"><i id="progress-bar"></i></div>
+      <div class="question-layout">
+        <div class="question-main">
+          <span class="question-number" id="question-number">01</span>
+          <h2 id="question-text"></h2>
+          <div id="answers" class="answers"></div>
+        </div>
+        <div class="question-art">
+          <div class="rings"><i></i><i></i><i></i></div>
         </div>
       </div>
     </section>
 
-    <section class="screen" id="screen-test" data-screen="test" hidden>
-      <header class="test-header">
-        <button class="icon-button" id="question-back" data-action="prev-question" aria-label="Предыдущий вопрос">←</button>
-        <div class="progress-copy"><span id="question-counter">Вопрос 1 из 20</span><strong id="question-percent">5%</strong></div>
-        <button class="text-button" data-action="restart-test">Начать заново</button>
-      </header>
-      <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="5"><div class="progress-bar" id="progress-bar"></div></div>
-      <div class="test-layout">
-        <div class="question-zone">
-          <div class="question-card" id="question-card">
-            <span class="question-index" id="question-index">01</span>
-            <p class="question-text" id="question-text"></p>
-          </div>
-          <div class="answers" id="answers" role="radiogroup"></div>
-          <p class="question-hint">Можно использовать клавиши 1-4.</p>
+    <section class="screen dark" data-screen="analysis" hidden>
+      <div class="analysis-wrap">
+        <p class="eyebrow light">Анализируем ответы</p>
+        <h2>Собираем вашу <span>внутреннюю карту</span></h2>
+        <div class="analysis-steps">
+          <div data-step><b>01</b><span>Сопоставляем ответы</span></div>
+          <div data-step><b>02</b><span>Считаем выраженность стратегий</span></div>
+          <div data-step><b>03</b><span>Определяем ведущий механизм</span></div>
+          <div data-step><b>04</b><span>Формируем интерпретацию</span></div>
         </div>
-        <aside class="test-art">
-          <div class="test-art-copy"><small>Вопрос</small><strong id="aside-question-number">01</strong></div>
-          <div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-c"></div>
-        </aside>
+        <div class="analysis-progress"><div><span id="analysis-label">Начинаем анализ</span><strong id="analysis-percent">0%</strong></div><div><i id="analysis-bar"></i></div></div>
       </div>
     </section>
 
-    <section class="screen screen-dark" id="screen-analysis" data-screen="analysis" hidden>
-      <header class="site-header dark-header">
-        <div class="brand compact light"><span class="brand-mark">NM</span><strong>Архитектура личности</strong></div>
-        <div class="status"><span></span>Анализ ответов</div>
-      </header>
-      <div class="screen-body analysis-layout">
-        <div>
-          <p class="eyebrow light">Обработка результата</p>
-          <h2>Собираем вашу <span>внутреннюю карту</span></h2>
-          <p class="lead muted-light">Сопоставляем ответы, считаем выраженность стратегий и определяем ведущий механизм адаптации.</p>
-          <div class="analysis-steps">
-            <div data-analysis-step><i>01</i><div><strong>Сопоставление ответов</strong><small>Проверяем общий рисунок реакций</small></div></div>
-            <div data-analysis-step><i>02</i><div><strong>Подсчет стратегий</strong><small>Сравниваем выраженность пяти механизмов</small></div></div>
-            <div data-analysis-step><i>03</i><div><strong>Определение ведущей стратегии</strong><small>Находим наиболее вероятный способ адаптации</small></div></div>
-            <div data-analysis-step><i>04</i><div><strong>Формирование интерпретации</strong><small>Собираем понятное описание результата</small></div></div>
-          </div>
-          <div class="analysis-progress"><div><span id="analysis-message">Это займет несколько секунд</span><strong id="analysis-percent">0%</strong></div><div><i id="analysis-progress-bar"></i></div></div>
-        </div>
-        <div class="visual-card dark-card"><img src="assets/images/analysis.png" alt="Анализ структуры"></div>
-      </div>
-    </section>
-
-    <section class="screen" id="screen-result" data-screen="result" hidden>
-      <header class="site-header">
-        <div class="brand compact"><span class="brand-mark">NM</span><strong>Ваш результат</strong></div>
-        <button class="text-button" data-action="restart-test">Пройти заново</button>
-      </header>
-      <div class="screen-body result-layout">
+    <section class="screen" data-screen="result" hidden>
+      <div class="result-shell">
         <div class="result-copy">
-          <p class="eyebrow">Ведущая стратегия</p>
-          <h2 id="result-title">Спасатель</h2>
-          <p class="result-tagline" id="result-tagline"></p>
-          <div class="summary-box"><small>Ключевая логика</small><p id="result-summary"></p></div>
+          <p class="eyebrow">Ваша ведущая стратегия</p>
+          <h2 id="result-title"></h2>
+          <p class="result-lead" id="result-tagline"></p>
+          <div class="result-summary" id="result-summary"></div>
           <div class="result-grid">
-            <article><small>Внутренний двигатель</small><p id="result-driver"></p></article>
-            <article><small>Повторяющийся цикл</small><p id="result-repeat"></p></article>
-            <article><small>Ресурс стратегии</small><p id="result-strength"></p></article>
-            <article><small>Цена стратегии</small><p id="result-risk"></p></article>
+            <article><small>Что вами движет</small><p id="result-driver"></p></article>
+            <article><small>Что повторяется</small><p id="result-repeat"></p></article>
+            <article><small>Сильная сторона</small><p id="result-strength"></p></article>
+            <article><small>Главный риск</small><p id="result-risk"></p></article>
           </div>
-          <button class="button button-primary" data-action="open-details">Подробная расшифровка <span>→</span></button>
+          <div class="result-actions">
+            <button class="button button-dark" data-action="details">Смотреть полный результат <span>→</span></button>
+            <button class="button button-light" data-action="restart">Пройти заново</button>
+          </div>
         </div>
-        <div class="visual-card result-visual">
-          <div class="visual-title"><small>Ваш тип</small><strong id="result-visual-title"></strong></div>
-          <img id="result-image" src="assets/images/rescuer.png" alt="">
-          <div class="score-panel"><div><span>Выраженность</span><strong id="result-score-percent">0%</strong></div><div><i id="result-score-bar"></i></div></div>
+        <div class="result-image-card">
+          <img id="result-image" src="" alt="">
+          <div class="score"><span>Выраженность стратегии</span><strong id="result-score"></strong></div>
         </div>
       </div>
     </section>
 
-    <section class="screen" id="screen-details" data-screen="details" hidden>
-      <header class="site-header">
-        <button class="text-button" data-action="back-to-result">← К результату</button>
-        <button class="text-button" data-action="restart-test">Пройти заново</button>
+    <section class="screen" data-screen="details" hidden>
+      <header class="topbar">
+        <button class="link-button" data-action="result">← К результату</button>
+        <button class="link-button" data-action="restart">Пройти заново</button>
       </header>
-      <div class="details-heading"><div><p class="eyebrow">Подробная интерпретация</p><h2 id="details-title"></h2></div><p id="details-intro"></p></div>
-      <div class="details-tabs" role="tablist">
-        <button class="details-tab is-active" id="tab-about" data-tab="about" role="tab" aria-selected="true"><span>01</span>Суть</button>
-        <button class="details-tab" id="tab-triggers" data-tab="triggers" role="tab" aria-selected="false"><span>02</span>Триггеры</button>
-        <button class="details-tab" id="tab-price" data-tab="price" role="tab" aria-selected="false"><span>03</span>Цена</button>
-        <button class="details-tab" id="tab-growth" data-tab="growth" role="tab" aria-selected="false"><span>04</span>Развитие</button>
-      </div>
-      <div class="details-layout">
-        <article class="details-panel" id="details-panel"><div id="details-content"></div></article>
-        <aside class="details-aside"><div class="details-image"><img id="details-image" src="" alt=""></div><div class="details-note"><small>Важно</small><p>Стратегия не является вашей личностью. Это автоматический способ справляться с внутренним напряжением.</p></div></aside>
-      </div>
-      <div class="details-footer"><button class="button button-secondary" data-action="back-to-result">Назад</button><button class="button button-primary" data-action="to-cta">Что делать дальше <span>→</span></button></div>
-    </section>
-
-    <section class="screen screen-dark" id="screen-cta" data-screen="cta" hidden>
-      <header class="site-header dark-header">
-        <button class="text-button light-button" data-action="back-to-details">← К расшифровке</button>
-        <div class="brand compact light"><span class="brand-mark">NM</span><strong>Наталья Макарова</strong></div>
-      </header>
-      <div class="screen-body cta-layout">
-        <div class="visual-card dark-card"><img src="assets/images/cta.png" alt="Скульптурная композиция"></div>
-        <div class="cta-copy">
-          <p class="eyebrow light">Следующий шаг</p>
-          <h2>Понять стратегию - <span>не значит автоматически выйти из нее</span></h2>
-          <p class="lead muted-light">На консультации мы разбираем, какое чувство запускает стратегию, чего она пытается добиться и как постепенно вернуть выбор взрослой части личности.</p>
-          <div class="cta-question"><small>Вопрос для себя</small><p>Что изменится в моей жизни, если эта стратегия перестанет принимать решения вместо меня?</p></div>
-          <a class="button button-light" href="https://t.me/natashamakara" target="_blank" rel="noreferrer">Записаться на консультацию <span>→</span></a>
+      <div class="details-shell">
+        <div class="details-head">
+          <div><p class="eyebrow">Подробная расшифровка</p><h2 id="details-title"></h2></div>
+          <p id="details-intro"></p>
         </div>
+        <div class="tabs">
+          <button class="tab is-active" data-tab="about">Суть</button>
+          <button class="tab" data-tab="triggers">Триггеры</button>
+          <button class="tab" data-tab="price">Цена</button>
+          <button class="tab" data-tab="growth">Развитие</button>
+        </div>
+        <div class="details-card" id="details-content"></div>
       </div>
     </section>
   </main>
 
-  <div class="modal" id="restart-modal" hidden>
-    <button class="modal-backdrop" data-action="close-restart-modal" aria-label="Закрыть"></button>
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="restart-title">
-      <button class="modal-close" data-action="close-restart-modal" aria-label="Закрыть">×</button>
-      <h2 id="restart-title">Начать тест заново?</h2>
-      <p>Текущие ответы будут удалены.</p>
-      <div><button class="button button-secondary" data-action="close-restart-modal">Отмена</button><button class="button button-primary" data-action="confirm-restart">Начать заново</button></div>
-    </div>
-  </div>
-
   <script src="assets/js/questions.js"></script>
-  <script src="assets/js/strategies.js"></script>
   <script src="assets/js/results.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
