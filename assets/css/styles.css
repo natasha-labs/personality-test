@@ -795,3 +795,40 @@ a{font:inherit}
     max-height:320px;
   }
 }
+
+
+/* Animation pack */
+@keyframes floatHero{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+}
+.home-art,.hero-figure,.silver-person,.silver-halo{
+animation:floatHero 5s ease-in-out infinite;
+}
+.screen.active{
+animation:screenEnter .55s cubic-bezier(.22,.61,.36,1);
+}
+@keyframes screenEnter{
+from{opacity:0;transform:translateY(22px) scale(.985)}
+to{opacity:1;transform:translateY(0) scale(1)}
+}
+.question-card,.card,.answer,.option{
+transition:transform .28s ease,box-shadow .28s ease,background-color .28s ease;
+}
+.question-card:hover,.card:hover{
+transform:translateY(-4px);
+}
+.answer:hover,.option:hover{
+transform:translateX(6px) scale(1.01);
+}
+.progress-fill{
+transition:width .45s cubic-bezier(.22,.61,.36,1);
+}
+button{
+transition:transform .2s ease, box-shadow .25s ease, opacity .2s ease;
+}
+button:hover{transform:translateY(-2px)}
+button:active{transform:scale(.97)}
+.fade-in{
+animation:screenEnter .45s ease both;
+}
