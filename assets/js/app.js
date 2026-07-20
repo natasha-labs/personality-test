@@ -32,7 +32,8 @@
     resultRepeat: document.getElementById("result-repeat"),
     resultStrength: document.getElementById("result-strength"),
     resultRisk: document.getElementById("result-risk"),
-    detailsContent: document.getElementById("details-content")
+    detailsContent: document.getElementById("details-content"),
+    resultImage: document.getElementById("result-image")
   };
 
   const show = (screenId) => {
@@ -177,6 +178,8 @@
     elements.resultRepeat.textContent = strategy.repeat;
     elements.resultStrength.textContent = strategy.strength;
     elements.resultRisk.textContent = strategy.risk;
+    elements.resultImage.src = strategy.image;
+    elements.resultImage.alt = `Иллюстрация стратегии «${strategy.title}»`;
   };
 
   const relationships = {

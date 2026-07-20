@@ -753,3 +753,45 @@ a{font:inherit}
   .cta-art{opacity:.16;right:-90px}
   .models div{grid-template-columns:1fr;gap:2px;padding:7px 0}
 }
+
+
+/* Настоящие отдельные SVG-иллюстрации */
+.home-art,
+.result-figure{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:420px;
+}
+
+.home-art img,
+.result-figure img{
+  display:block;
+  width:min(100%,760px);
+  height:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 28px 28px rgba(55,61,68,.18));
+}
+
+.result-figure{
+  width:100%;
+  max-width:780px;
+  margin:10px auto 22px;
+}
+
+.result-figure img{
+  max-height:410px;
+}
+
+@media (max-width:760px){
+  .home-art,
+  .result-figure{
+    min-height:300px;
+  }
+
+  .home-art img,
+  .result-figure img{
+    max-height:320px;
+  }
+}
