@@ -275,6 +275,18 @@
     }
 
 
+
+    if (action === "go-home") {
+      clearAnalysisTimers();
+      state.index = 0;
+      state.responses = Array(questions.length).fill(null);
+      state.result = null;
+      state.locked = false;
+      window.scrollTo({ top: 0, behavior: "auto" });
+      show("screen-home");
+      return;
+    }
+
     if (action === "restart-test") {
       clearAnalysisTimers();
       state.index = 0;
@@ -290,7 +302,7 @@
       if (state.locked) return;
 
       if (state.index === 0) {
-        show("screen-intro");
+        show("screen-home");
       } else {
         state.index -= 1;
         renderQuestion();
