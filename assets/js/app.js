@@ -259,11 +259,23 @@
     const action = actionElement?.dataset.action;
 
     if (action === "to-intro") {
-      show("screen-intro");
+      show("screen-home");
       return;
     }
 
     if (action === "start-test") {
+      clearAnalysisTimers();
+      state.index = 0;
+      state.responses = Array(questions.length).fill(null);
+      state.result = null;
+      state.locked = false;
+      renderQuestion();
+      show("screen-test");
+      return;
+    }
+
+
+    if (action === "restart-test") {
       clearAnalysisTimers();
       state.index = 0;
       state.responses = Array(questions.length).fill(null);
